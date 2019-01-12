@@ -3,9 +3,7 @@ FILE_NAME = 'counter.txt'
 def increment_file_counter
   counter = nil
 
-  File.open(FILE_NAME).each do |line|
-    counter = line
-  end
+  counter = File.read(FILE_NAME)
 
   File.write(FILE_NAME, counter.to_i + 1) if counter
 end
